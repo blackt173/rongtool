@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RONG TOOL VIDEO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Khmer+OS+Siemreap&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', 'Khmer OS Siemreap', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e50914;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            color: #e50914;
+        }
+
+        .hero {
+            background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #e50914;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #b20710;
+        }
+
+        .movie-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .movie-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .movies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .movie {
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie img {
+            width: 100%;
+            height: auto;
+        }
+
+        .movie h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #e50914;
+        }
+
+        .movie p {
+            font-size: 14px;
+            padding: 0 10px 20px;
+        }
+
+        .video-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .video {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #e50914;
+            text-decoration: none;
+        }
+
+        .audio-control {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .audio-control img {
+            border: 2px solid #e50914;
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 10px;
+        }
+
+        .audio-control button {
+            padding: 10px 20px;
+            background-color: #e50914;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .audio-control button:hover {
+            background-color: #b20710;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">HOW TO USE RONG TOOL</div>
+        <nav>
+            <a href="#">Home</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Welcome to Rong tool video</h1>
+            <p>You can watch videos on this website to learn how to use Rong Tool.</p>
+            <P>សូមមើលដោយយកចិត្តទុកដាក់ដើម្បីជៀសវាងបញ្ហានាៗ។</P>
+            <button id="explore-button">Scroll Now | សូមអូសទៅក្រោម។</button>
+        </div>
+    </div>
+    
+    <!-- Music Player -->
+    <div class="audio-control">
+        <img id="song-logo" src="chiil photo.jpg" alt="Song Logo">
+        <audio id="background-music" loop>
+            <source src="Chill.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+        <button onclick="playMusic()">Play Music | បើក</button>
+        <button onclick="pauseMusic()">Pause Music​ | បិទ</button>
+    </div>
+
+    <section class="video-section">
+        <h1>HOW TO CREATE ACCOUNT | របៀបបង្កើតអាខោន</h1>
+        <div class="video">
+            <video controls width="100%">
+                <source src="IMG_1711.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video sections here if needed -->
+    </section>
+
+    <footer>
+        &copy; 2025 Rong Tool SMM Panel.
+    </footer>
+
+    <script>
+        // Play and Pause Music
+        const music = document.getElementById('background-music');
+        const songLogo = document.getElementById('song-logo');
+
+        function playMusic() {
+            music.play();
+            songLogo.src = "chiil photo.jpg"; // Replace with the actual logo path
+            songLogo.alt = "Now Playing: Chill";
+        }
+
+        function pauseMusic() {
+            music.pause();
+        }
+
+        // Scroll functionality for Explore button
+        document.getElementById('explore-button').addEventListener('click', function() {
+            alert('Start watching videos!');
+            document.querySelector('.video-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
